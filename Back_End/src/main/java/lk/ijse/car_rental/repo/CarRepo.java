@@ -26,5 +26,5 @@ public interface CarRepo extends JpaRepository<Car,String> {
     List countCarBrands() throws RuntimeException;
 
     @Query(value = "select count(regNum) from Car where Availability='MAINTAIN'", nativeQuery = true)
-    List countMaintainingCars() throws RuntimeException;
+    int countMaintainingCars() throws RuntimeException;
 }
