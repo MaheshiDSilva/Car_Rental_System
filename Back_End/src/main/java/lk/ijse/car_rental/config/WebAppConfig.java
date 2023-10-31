@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "lk.ijse.car_rental.controller")
-public class WebAppConfig implements WebMvcConfigurer {
+public class WebAppConfig{
     @Bean
     public CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
@@ -20,8 +20,5 @@ public class WebAppConfig implements WebMvcConfigurer {
         return multipartResolver;
     }
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**/**").addResourceLocations("http://localhost:8080");
-    }
+
 }
